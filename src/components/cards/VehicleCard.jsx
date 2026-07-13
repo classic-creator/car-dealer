@@ -52,7 +52,7 @@ const VehicleCard = ({ car }) => {
           </div>
           <div className="flex items-center gap-1.5">
             <Gauge size={16} className="text-gray-400" />
-            <span>{car.mileage.toLocaleString()} mi</span>
+            <span>{car.mileage.toLocaleString()} km</span>
           </div>
           <div className="flex items-center gap-1.5">
             <Fuel size={16} className="text-gray-400" />
@@ -67,7 +67,7 @@ const VehicleCard = ({ car }) => {
         {/* Footer */}
         <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
           <div className="font-bold text-2xl text-primary">
-            ${car.price.toLocaleString()}
+            ₹{car.price.toLocaleString('en-IN')}
           </div>
           <Link 
             to={`/car/${car.id}`}

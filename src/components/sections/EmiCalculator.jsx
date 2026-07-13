@@ -7,13 +7,13 @@ const EmiCalculator = () => {
   const navigate = useNavigate();
 
   // Inputs
-  const [carPrice, setCarPrice] = useState(50000);
-  const [downPayment, setDownPayment] = useState(10000);
+  const [carPrice, setCarPrice] = useState(3000000);
+  const [downPayment, setDownPayment] = useState(600000);
   const [interestRate, setInterestRate] = useState(7.5);
   const [loanTerm, setLoanTerm] = useState(5); // in years
 
   // Outputs
-  const [loanAmount, setLoanAmount] = useState(40000);
+  const [loanAmount, setLoanAmount] = useState(2400000);
   const [monthlyPayment, setMonthlyPayment] = useState(0);
 
   // Recalculate whenever inputs change
@@ -107,13 +107,13 @@ const EmiCalculator = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs font-bold text-gray-400 uppercase">
                     <span>Vehicle Price</span>
-                    <span className="text-white">${carPrice.toLocaleString()}</span>
+                    <span className="text-white">₹{carPrice.toLocaleString('en-IN')}</span>
                   </div>
                   <input
                     type="range"
-                    min="10000"
-                    max="200000"
-                    step="2000"
+                    min="500000"
+                    max="15000000"
+                    step="50000"
                     value={carPrice}
                     onChange={(e) => handleCarPriceChange(Number(e.target.value))}
                     className="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent"
@@ -124,13 +124,13 @@ const EmiCalculator = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs font-bold text-gray-400 uppercase">
                     <span>Down Payment</span>
-                    <span className="text-white">${downPayment.toLocaleString()}</span>
+                    <span className="text-white">₹{downPayment.toLocaleString('en-IN')}</span>
                   </div>
                   <input
                     type="range"
                     min="0"
                     max={carPrice}
-                    step="1000"
+                    step="20000"
                     value={downPayment}
                     onChange={(e) => setDownPayment(Number(e.target.value))}
                     className="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent"
@@ -177,7 +177,7 @@ const EmiCalculator = () => {
                 <div className="space-y-1">
                   <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Monthly Payment</span>
                   <div className="text-4xl md:text-5xl font-black tracking-tight text-accent mt-2">
-                    ${monthlyPayment}
+                    ₹{monthlyPayment.toLocaleString('en-IN')}
                     <span className="text-xs text-gray-400 font-bold block mt-1 tracking-normal">/ month</span>
                   </div>
                 </div>
@@ -185,11 +185,11 @@ const EmiCalculator = () => {
                 <div className="w-full border-t border-b border-white/10 py-4 my-6 text-xs text-gray-300 font-semibold space-y-2.5">
                   <div className="flex justify-between">
                     <span>Principal Amount</span>
-                    <span className="text-white">${loanAmount.toLocaleString()}</span>
+                    <span className="text-white">₹{loanAmount.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Down Payment</span>
-                    <span className="text-white">${downPayment.toLocaleString()}</span>
+                    <span className="text-white">₹{downPayment.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>APR (Fixed)</span>

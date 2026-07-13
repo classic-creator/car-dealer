@@ -79,10 +79,10 @@ const Buy = () => {
 
                 <div>
                   <h3 className="font-semibold mb-3">Price Range</h3>
-                  <input type="range" className="w-full accent-accent" min="0" max="150000" />
+                  <input type="range" className="w-full accent-accent" min="0" max="10000000" step="100000" />
                   <div className="flex justify-between text-xs text-gray-500 mt-2">
-                    <span>$0</span>
-                    <span>$150k+</span>
+                    <span>₹0</span>
+                    <span>₹1 Cr+</span>
                   </div>
                 </div>
 

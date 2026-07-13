@@ -189,7 +189,7 @@ const FeaturedInventory = () => {
                     <div className="flex flex-col">
                       <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-none">Price</span>
                       <span className="text-2xl font-black text-primary mt-1">
-                        ${car.price ? car.price.toLocaleString() : 'N/A'}
+                        ₹{car.price ? car.price.toLocaleString('en-IN') : 'N/A'}
                       </span>
                     </div>
                     <Link 
@@ -271,7 +271,7 @@ const FeaturedInventory = () => {
                 <div>
                   <div className="flex justify-between items-center mb-6">
                     <span className="text-xs font-extrabold text-gray-400 uppercase tracking-widest">Specifications</span>
-                    <span className="text-3xl font-black text-accent">${selectedQuickView.price.toLocaleString()}</span>
+                    <span className="text-3xl font-black text-accent">₹{selectedQuickView.price.toLocaleString('en-IN')}</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-y-4 gap-x-6 text-sm border-b border-gray-150 pb-6 mb-6">

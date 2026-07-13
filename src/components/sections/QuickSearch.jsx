@@ -36,11 +36,11 @@ const QuickSearch = () => {
   };
 
   const prices = [
-    { label: 'Under $20,000', value: '20000' },
-    { label: 'Under $40,000', value: '40000' },
-    { label: 'Under $60,000', value: '60000' },
-    { label: 'Under $100,000', value: '100000' },
-    { label: 'Under $150,000', value: '150000' }
+    { label: 'Under ₹15 Lakhs', value: '1500000' },
+    { label: 'Under ₹20 Lakhs', value: '2000000' },
+    { label: 'Under ₹25 Lakhs', value: '2500000' },
+    { label: 'Under ₹30 Lakhs', value: '3000000' },
+    { label: 'Under ₹45 Lakhs', value: '4500000' }
   ];
 
   const years = ['2019', '2020', '2021', '2022', '2023', '2024'];

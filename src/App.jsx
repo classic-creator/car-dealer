@@ -24,6 +24,7 @@ import AddCar from './pages/admin/AddCar';
 import CarDetails from './pages/admin/CarDetails';
 import LeadsPipeline from './pages/admin/LeadsPipeline';
 import Customers from './pages/admin/Customers';
+import Reports from './pages/admin/Reports';
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
           <Route path="cars/:id" element={<CarDetails />} />
           <Route path="leads" element={<LeadsPipeline />} />
           <Route path="customers" element={<Customers />} />
+          <Route path="reports" element={<Reports />} />
           {/* Add more admin routes here in future phases */}
         </Route>
       </Routes>

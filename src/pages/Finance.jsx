@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Finance = () => {
-  const [loanAmount, setLoanAmount] = useState(30000);
+  const [loanAmount, setLoanAmount] = useState(2000000);
   const [months, setMonths] = useState(60);
   const interestRate = 5.9; // Fixed for demo
 
-  const monthlyPayment = ((loanAmount * (1 + (interestRate / 100) * (months / 12))) / months).toFixed(0);
+  const monthlyPayment = Math.round((loanAmount * (1 + (interestRate / 100) * (months / 12))) / months);
 
   return (
     <div className="min-h-screen bg-white">
@@ -24,11 +24,11 @@ const Finance = () => {
             <div>
               <div className="flex justify-between font-bold mb-4">
                 <span>Vehicle Price</span>
-                <span className="text-accent">${loanAmount.toLocaleString()}</span>
+                <span className="text-accent">₹{loanAmount.toLocaleString('en-IN')}</span>
               </div>
               <input 
                 type="range" 
-                min="5000" max="150000" step="1000"
+                min="500000" max="15000000" step="50000"
                 value={loanAmount}
                 onChange={(e) => setLoanAmount(Number(e.target.value))}
                 className="w-full accent-accent h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
@@ -65,7 +65,7 @@ const Finance = () => {
               animate={{ scale: 1, opacity: 1 }}
               className="text-5xl md:text-6xl font-bold text-accent mb-8 relative z-10"
             >
-              ${monthlyPayment}
+              ₹{monthlyPayment.toLocaleString('en-IN')}
             </motion.div>
             <button className="w-full bg-accent hover:bg-accent-hover py-4 rounded-xl font-bold text-lg transition-colors relative z-10 shadow-lg">
               Apply for Pre-Approval

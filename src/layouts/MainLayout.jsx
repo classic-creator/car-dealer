@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import { ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const MainLayout = () => {
+  const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,10 +29,12 @@ const MainLayout = () => {
     });
   };
 
+  const isOverlayHeader = ['/', '/about', '/sell', '/finance'].includes(location.pathname);
+
   return (
     <div className="flex flex-col min-h-screen bg-surface-dark font-sans relative">
       <Navbar />
-      <main className="flex-grow pt-16">
+      <main className={`flex-grow ${isOverlayHeader ? '' : 'pt-16'}`}>
         <Outlet />
       </main>
       <Footer />

@@ -300,34 +300,34 @@ const AddCar = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
-                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Purchase Price ($)</label>
-                <input {...register('purchasePrice', { required: true })} type="number" placeholder="20000" className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-1 focus:ring-accent outline-none font-bold" />
+                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Purchase Price (₹)</label>
+                <input {...register('purchasePrice', { required: true })} type="number" placeholder="2000000" className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-1 focus:ring-accent outline-none font-bold" />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Selling Price ($)</label>
-                <input {...register('price', { required: true })} type="number" placeholder="25000" className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-1 focus:ring-accent outline-none font-bold text-green-600" />
+                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Selling Price (₹)</label>
+                <input {...register('price', { required: true })} type="number" placeholder="2500000" className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-1 focus:ring-accent outline-none font-bold text-green-600" />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Flat Discount ($)</label>
+                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Flat Discount (₹)</label>
                 <input {...register('discount')} type="number" className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-1 focus:ring-accent outline-none" />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Local Taxes ($)</label>
+                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Local Taxes (₹)</label>
                 <input {...register('tax')} type="number" className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-1 focus:ring-accent outline-none" />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Additional Repair/Prep Charges ($)</label>
+                <label className="block text-xs font-bold text-gray-600 uppercase mb-2">Additional Repair/Prep Charges (₹)</label>
                 <input {...register('additionalCharges')} type="number" className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl focus:ring-1 focus:ring-accent outline-none" />
               </div>
 
               {/* Profit margin preview */}
               <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col justify-center">
                 <span className="text-green-700 text-xs font-bold uppercase">Calculated Profit Margin</span>
-                <span className="text-xl font-black text-green-900 mt-1">${profitMargin.toLocaleString()}</span>
+                <span className="text-xl font-black text-green-900 mt-1">₹{profitMargin.toLocaleString('en-IN')}</span>
               </div>
             </div>
 

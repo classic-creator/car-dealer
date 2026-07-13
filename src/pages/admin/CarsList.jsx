@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
-  Plus, Search, Filter, MoreVertical, Edit, Trash2, Eye, DollarSign, X,
+  Plus, Search, Filter, MoreVertical, Edit, Trash2, Eye, DollarSign, IndianRupee, X,
   TrendingUp, BarChart2, CheckSquare, Square, ChevronDown, RefreshCw, 
   Settings, ArrowUpDown, ShieldCheck, Download, Archive, Globe, Award, Sparkles, FolderPlus, Save
 } from 'lucide-react';
@@ -266,19 +266,19 @@ const CarsList = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
               <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">Available Value</span>
-              <h3 className="text-2xl font-black text-gray-900 mt-2">${totalInventoryValue.toLocaleString()}</h3>
+              <h3 className="text-2xl font-black text-gray-900 mt-2">₹{totalInventoryValue.toLocaleString('en-IN')}</h3>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
               <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">Average Price</span>
-              <h3 className="text-2xl font-black text-gray-900 mt-2">${Math.round(averagePrice).toLocaleString()}</h3>
+              <h3 className="text-2xl font-black text-gray-900 mt-2">₹{Math.round(averagePrice).toLocaleString('en-IN')}</h3>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
               <span className="text-gray-400 text-xs font-bold uppercase tracking-wider">Total Sales (Sold)</span>
-              <h3 className="text-2xl font-black text-green-600 mt-2">${totalRevenue.toLocaleString()}</h3>
+              <h3 className="text-2xl font-black text-green-600 mt-2">₹{totalRevenue.toLocaleString('en-IN')}</h3>
             </div>
             <div className="bg-green-50 p-6 rounded-2xl border border-green-200 shadow-sm">
               <span className="text-green-700 text-xs font-bold uppercase tracking-wider">Total Profit Made</span>
-              <h3 className="text-2xl font-black text-green-900 mt-2">${totalProfit.toLocaleString()}</h3>
+              <h3 className="text-2xl font-black text-green-900 mt-2">₹{totalProfit.toLocaleString('en-IN')}</h3>
             </div>
           </div>
 
@@ -681,21 +681,21 @@ const CarsList = () => {
 
                         {/* Selling Price */}
                         <td className="px-6 py-4 font-black text-gray-950">
-                          ${car.price.toLocaleString()}
+                          ₹{car.price.toLocaleString('en-IN')}
                           {car.status === 'Sold' && (
-                            <span className="block text-[10px] font-bold text-green-600">Sold: ${car.soldPrice?.toLocaleString()}</span>
+                            <span className="block text-[10px] font-bold text-green-600">Sold: ₹{car.soldPrice?.toLocaleString('en-IN')}</span>
                           )}
                         </td>
 
                         {/* Margin */}
                         <td className="px-6 py-4 font-bold text-green-700">
-                          ${(car.sellingPrice - car.purchasePrice).toLocaleString()}
+                          ₹{(car.sellingPrice - car.purchasePrice).toLocaleString('en-IN')}
                         </td>
 
                         {/* Specs */}
                         <td className="px-6 py-4">
                           <p className="text-xs text-gray-700 font-bold">{car.fuelType} • {car.transmission}</p>
-                          <p className="text-xs text-gray-400 mt-0.5">{car.mileage?.toLocaleString()} mi • {car.bodyType}</p>
+                          <p className="text-xs text-gray-400 mt-0.5">{car.mileage?.toLocaleString()} km • {car.bodyType}</p>
                         </td>
 
                         {/* Row Actions */}
@@ -787,16 +787,16 @@ const CarsList = () => {
             <form onSubmit={handleMarkAsSold} className="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
               <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
                 <p className="text-sm font-semibold text-gray-600 mb-1">{selectedCar.year} {selectedCar.make} {selectedCar.model}</p>
-                <p className="text-xs text-gray-500">Listed Price: ${selectedCar.price.toLocaleString()}</p>
+                <p className="text-xs text-gray-500">Listed Price: ₹{selectedCar.price.toLocaleString('en-IN')}</p>
               </div>
               
               <h4 className="text-sm font-bold text-gray-900 mb-2 border-b pb-2">Sale Details</h4>
               
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">Final Selling Price ($)</label>
+                  <label className="block text-sm font-bold text-gray-700 mb-2">Final Selling Price (₹)</label>
                   <div className="relative">
-                    <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                    <IndianRupee className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                     <input
                       type="number"
                       required

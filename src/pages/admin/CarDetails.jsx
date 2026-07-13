@@ -283,19 +283,19 @@ const CarDetails = () => {
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
                       <span className="block text-xs font-bold text-gray-400 uppercase">Purchase Price</span>
-                      <span className="text-lg font-black text-gray-900">${car.purchasePrice?.toLocaleString()}</span>
+                      <span className="text-lg font-black text-gray-900">₹{car.purchasePrice?.toLocaleString('en-IN')}</span>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
                       <span className="block text-xs font-bold text-gray-400 uppercase">Listed Retail</span>
-                      <span className="text-lg font-black text-gray-900">${car.sellingPrice?.toLocaleString()}</span>
+                      <span className="text-lg font-black text-gray-900">₹{car.sellingPrice?.toLocaleString('en-IN')}</span>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
                       <span className="block text-xs font-bold text-gray-400 uppercase">Discounts / Tax</span>
-                      <span className="text-sm font-bold text-red-600">-${car.discount || 0} / +${car.tax || 0}</span>
+                      <span className="text-sm font-bold text-red-600">-₹{(car.discount || 0).toLocaleString('en-IN')} / +₹{(car.tax || 0).toLocaleString('en-IN')}</span>
                     </div>
                     <div className="bg-green-50 p-4 rounded-xl border border-green-100">
                       <span className="block text-xs font-bold text-green-700 uppercase">Projected Profit</span>
-                      <span className="text-lg font-black text-green-900">${profitMargin?.toLocaleString()} ({profitPercentage}%)</span>
+                      <span className="text-lg font-black text-green-900">₹{profitMargin?.toLocaleString('en-IN')} ({profitPercentage}%)</span>
                     </div>
                   </div>
 
@@ -309,7 +309,7 @@ const CarDetails = () => {
                             <p className="font-bold text-gray-800">{hist.type}</p>
                             <p className="text-xs text-gray-400">{hist.date}</p>
                           </div>
-                          <span className="font-black text-gray-900">${hist.price?.toLocaleString()}</span>
+                          <span className="font-black text-gray-900">₹{hist.price?.toLocaleString('en-IN')}</span>
                         </div>
                       ))}
                     </div>
@@ -390,9 +390,9 @@ const CarDetails = () => {
                           <div className="space-y-1">
                             <div className="flex flex-wrap items-center gap-2">
                               <span className="font-bold text-gray-900 text-sm">{service.type}</span>
-                              <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded font-bold">{service.mileage} mi</span>
+                              <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded font-bold">{service.mileage} km</span>
                             </div>
-                            <p className="text-xs text-gray-500">{service.date} • Cost: <span className="font-semibold text-gray-700">${service.cost}</span></p>
+                            <p className="text-xs text-gray-500">{service.date} • Cost: <span className="font-semibold text-gray-700">₹{service.cost.toLocaleString('en-IN')}</span></p>
                             <p className="text-xs text-gray-600 mt-1">{service.description || 'Routine checks completed.'}</p>
                           </div>
                         </div>

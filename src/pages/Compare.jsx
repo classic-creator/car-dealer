@@ -75,7 +75,7 @@ const Compare = () => {
                       <img src={car.image} alt={car.name} className="w-full h-full object-cover" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900">{car.year} {car.name}</h3>
-                    <p className="text-2xl font-black text-accent mt-2">${car.price.toLocaleString()}</p>
+                    <p className="text-2xl font-black text-accent mt-2">₹{car.price.toLocaleString('en-IN')}</p>
                     <Link to={`/car/${car.id}`} className="block w-full text-center mt-4 bg-gray-900 hover:bg-black text-white py-2 rounded-lg font-bold transition-colors">
                       View Details
                     </Link>

@@ -7,12 +7,12 @@ export const mockCars = [
     year: 2023,
     registrationNumber: 'MH-12-UX-4509',
     vin: 'MAT456983A890123L',
-    price: 25000,
-    purchasePrice: 20000,
-    sellingPrice: 25000,
-    discount: 500,
-    tax: 1500,
-    additionalCharges: 300,
+    price: 2500000,
+    purchasePrice: 2000000,
+    sellingPrice: 2500000,
+    discount: 50000,
+    tax: 150000,
+    additionalCharges: 30000,
     mileage: 12000,
     fuelType: 'Diesel',
     transmission: 'Automatic',
@@ -62,11 +62,11 @@ export const mockCars = [
     },
     serviceHistory: [
       { date: '2023-10-10', mileage: 5000, type: 'First Free Service', cost: 0, description: 'Engine oil replacement and general checkup.' },
-      { date: '2024-04-15', mileage: 10000, type: 'General Maintenance', cost: 150, description: 'Wheel alignment and filter cleaning.' }
+      { date: '2024-04-15', mileage: 10000, type: 'General Maintenance', cost: 15000, description: 'Wheel alignment and filter cleaning.' }
     ],
     pricingHistory: [
-      { date: '2024-10-12', price: 25500, type: 'Initial Listing' },
-      { date: '2024-10-15', price: 25000, type: 'Price Drop Promo' }
+      { date: '2024-10-12', price: 2550000, type: 'Initial Listing' },
+      { date: '2024-10-15', price: 2500000, type: 'Price Drop Promo' }
     ],
     activityLog: [
       { date: '2024-10-12 10:00', user: 'Admin User', action: 'Created vehicle listing' },
@@ -83,12 +83,12 @@ export const mockCars = [
     year: 2022,
     registrationNumber: 'DL-3C-CC-9812',
     vin: 'MAM789123A781298K',
-    price: 28000,
-    purchasePrice: 23000,
-    sellingPrice: 28000,
+    price: 2800000,
+    purchasePrice: 2300000,
+    sellingPrice: 2800000,
     discount: 0,
-    tax: 1800,
-    additionalCharges: 500,
+    tax: 180000,
+    additionalCharges: 50000,
     mileage: 24000,
     fuelType: 'Petrol',
     transmission: 'Automatic',
@@ -128,10 +128,10 @@ export const mockCars = [
     },
     inspectionStatus: { score: 95, result: 'Excellent', inspectionDate: '2024-10-10' },
     serviceHistory: [
-      { date: '2023-08-15', mileage: 10000, type: 'Scheduled Service', cost: 120, description: 'Routine engine check and fluids replacement.' },
-      { date: '2024-08-10', mileage: 20000, type: 'Scheduled Service', cost: 220, description: 'Brake pads replacement and wheel alignment.' }
+      { date: '2023-08-15', mileage: 10000, type: 'Scheduled Service', cost: 12000, description: 'Routine engine check and fluids replacement.' },
+      { date: '2024-08-10', mileage: 20000, type: 'Scheduled Service', cost: 22000, description: 'Brake pads replacement and wheel alignment.' }
     ],
-    pricingHistory: [{ date: '2024-10-10', price: 28000, type: 'Initial Listing' }],
+    pricingHistory: [{ date: '2024-10-10', price: 2800000, type: 'Initial Listing' }],
     activityLog: [{ date: '2024-10-10 11:15', user: 'Admin User', action: 'Created vehicle listing' }],
     notes: 'Premium customer base looking at this. Keep pricing firm.',
     soldPrice: null
@@ -144,12 +144,12 @@ export const mockCars = [
     year: 2021,
     registrationNumber: 'KA-03-MP-1122',
     vin: 'MAL245193B678901M',
-    price: 18000,
-    purchasePrice: 15000,
-    sellingPrice: 18000,
-    discount: 300,
-    tax: 1200,
-    additionalCharges: 200,
+    price: 1800000,
+    purchasePrice: 1500000,
+    sellingPrice: 1800000,
+    discount: 30000,
+    tax: 120000,
+    additionalCharges: 20000,
     mileage: 35000,
     fuelType: 'Petrol',
     transmission: 'Automatic',
@@ -189,13 +189,13 @@ export const mockCars = [
     },
     inspectionStatus: { score: 88, result: 'Good', inspectionDate: '2024-09-25' },
     serviceHistory: [
-      { date: '2022-06-10', mileage: 10000, type: 'Scheduled Service', cost: 90 },
-      { date: '2023-06-12', mileage: 20000, type: 'Scheduled Service', cost: 130 },
-      { date: '2024-06-15', mileage: 30000, type: 'Scheduled Service', cost: 180 }
+      { date: '2022-06-10', mileage: 10000, type: 'Scheduled Service', cost: 9000 },
+      { date: '2023-06-12', mileage: 20000, type: 'Scheduled Service', cost: 13000 },
+      { date: '2024-06-15', mileage: 30000, type: 'Scheduled Service', cost: 18000 }
     ],
     pricingHistory: [
-      { date: '2024-09-25', price: 18300, type: 'Initial Listing' },
-      { date: '2024-09-28', price: 18000, type: 'Price Adjustment' }
+      { date: '2024-09-25', price: 1830000, type: 'Initial Listing' },
+      { date: '2024-09-28', price: 1800000, type: 'Price Adjustment' }
     ],
     activityLog: [{ date: '2024-09-25 09:30', user: 'Admin User', action: 'Created vehicle listing' }],
     notes: 'Good running car, low maintenance. High resale demand.',
@@ -209,12 +209,12 @@ export const mockCars = [
     year: 2022,
     registrationNumber: 'MH-14-GH-2323',
     vin: 'MAK418902A910398D',
-    price: 19500,
-    purchasePrice: 16500,
-    sellingPrice: 19500,
-    discount: 500,
-    tax: 1300,
-    additionalCharges: 300,
+    price: 1950000,
+    purchasePrice: 1650000,
+    sellingPrice: 1950000,
+    discount: 50000,
+    tax: 130000,
+    additionalCharges: 30000,
     mileage: 18000,
     fuelType: 'Diesel',
     transmission: 'Automatic',
@@ -254,15 +254,15 @@ export const mockCars = [
     },
     inspectionStatus: { score: 90, result: 'Excellent', inspectionDate: '2024-08-14' },
     serviceHistory: [
-      { date: '2023-03-10', mileage: 10000, type: 'Scheduled Service', cost: 110 }
+      { date: '2023-03-10', mileage: 10000, type: 'Scheduled Service', cost: 11000 }
     ],
-    pricingHistory: [{ date: '2024-08-15', price: 19500, type: 'Initial Listing' }],
+    pricingHistory: [{ date: '2024-08-15', price: 1950000, type: 'Initial Listing' }],
     activityLog: [
       { date: '2024-08-15 12:00', user: 'Admin User', action: 'Created vehicle listing' },
       { date: '2024-09-01 16:20', user: 'Admin User', action: 'Marked as Sold' }
     ],
     notes: 'Sold to Robert Fox. Paperwork completed successfully.',
-    soldPrice: 19000
+    soldPrice: 1900000
   },
   {
     id: '5',
@@ -272,12 +272,12 @@ export const mockCars = [
     year: 2020,
     registrationNumber: 'TN-01-BK-7777',
     vin: 'MAT908312B901398M',
-    price: 38000,
-    purchasePrice: 32000,
-    sellingPrice: 38000,
+    price: 3800000,
+    purchasePrice: 3200000,
+    sellingPrice: 3800000,
     discount: 0,
-    tax: 2500,
-    additionalCharges: 800,
+    tax: 250000,
+    additionalCharges: 80000,
     mileage: 65000,
     fuelType: 'Diesel',
     transmission: 'Automatic',
@@ -317,12 +317,12 @@ export const mockCars = [
     },
     inspectionStatus: { score: 86, result: 'Good', inspectionDate: '2024-10-17' },
     serviceHistory: [
-      { date: '2021-10-10', mileage: 15000, type: 'Scheduled Service', cost: 150 },
-      { date: '2022-10-15', mileage: 30000, type: 'Scheduled Service', cost: 180 },
-      { date: '2023-10-18', mileage: 45000, type: 'Scheduled Service', cost: 320 },
-      { date: '2024-10-05', mileage: 60000, type: 'Major Maintenance Service', cost: 650, description: 'All fluids changed, brake pads replaced.' }
+      { date: '2021-10-10', mileage: 15000, type: 'Scheduled Service', cost: 15000 },
+      { date: '2022-10-15', mileage: 30000, type: 'Scheduled Service', cost: 18000 },
+      { date: '2023-10-18', mileage: 45000, type: 'Scheduled Service', cost: 32000 },
+      { date: '2024-10-05', mileage: 60000, type: 'Major Maintenance Service', cost: 65000, description: 'All fluids changed, brake pads replaced.' }
     ],
-    pricingHistory: [{ date: '2024-10-18', price: 38000, type: 'Initial Listing' }],
+    pricingHistory: [{ date: '2024-10-18', price: 3800000, type: 'Initial Listing' }],
     activityLog: [{ date: '2024-10-18 15:45', user: 'Admin User', action: 'Created vehicle listing' }],
     notes: 'Very high resale value model. Price negotiations should be very tight.',
     soldPrice: null

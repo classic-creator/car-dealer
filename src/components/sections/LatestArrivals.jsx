@@ -140,7 +140,7 @@ const LatestArrivals = () => {
                   {/* Pricing / Details */}
                   <div className="mt-auto flex items-center justify-between gap-4">
                     <span className="text-xl font-black text-primary">
-                      ${car.price ? car.price.toLocaleString() : 'N/A'}
+                      ₹{car.price ? car.price.toLocaleString('en-IN') : 'N/A'}
                     </span>
                     <Link 
                       to={`/car/${car.id}`}

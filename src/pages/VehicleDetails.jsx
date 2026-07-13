@@ -73,7 +73,7 @@ const VehicleDetails = () => {
             <div className="lg:hidden">
               <h1 className="text-3xl font-bold text-primary mb-2">{car.make} {car.model}</h1>
               <p className="text-gray-500 mb-4">{car.description}</p>
-              <div className="text-3xl font-bold text-accent mb-6">${car.price.toLocaleString()}</div>
+              <div className="text-3xl font-bold text-accent mb-6">₹{car.price.toLocaleString('en-IN')}</div>
             </div>
 
             {/* Image Gallery / 360 Viewer */}
@@ -198,7 +198,7 @@ const VehicleDetails = () => {
                   <p className="text-gray-500">{car.description}</p>
                 </div>
                 
-                <div className="text-4xl font-bold text-primary mb-2">${car.price.toLocaleString()}</div>
+                <div className="text-4xl font-bold text-primary mb-2">₹{car.price.toLocaleString('en-IN')}</div>
                 <p className="text-sm text-gray-500 flex items-center gap-1.5 mb-8">
                   <MapPin size={16} /> Location: {car.location}
                 </p>
@@ -220,7 +220,7 @@ const VehicleDetails = () => {
                 <div className="mb-6 bg-gray-50 p-4 rounded-xl text-center">
                   <div className="text-sm text-gray-500 font-bold mb-1">Estimated Monthly Payment</div>
                   <div className="text-4xl font-black text-accent">
-                    ${emi.toLocaleString()}<span className="text-base text-gray-500 font-normal"> /mo</span>
+                    ₹{emi.toLocaleString('en-IN')}<span className="text-base text-gray-500 font-normal"> /mo</span>
                   </div>
                 </div>
 
@@ -228,7 +228,7 @@ const VehicleDetails = () => {
                   <div>
                     <div className="flex justify-between mb-2">
                       <label className="text-sm font-bold text-gray-700">Down Payment ({downPayment}%)</label>
-                      <span className="text-sm font-bold text-primary">${((car.price * downPayment) / 100).toLocaleString()}</span>
+                      <span className="text-sm font-bold text-primary">₹{((car.price * downPayment) / 100).toLocaleString('en-IN')}</span>
                     </div>
                     <input 
                       type="range" 

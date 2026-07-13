@@ -3,11 +3,11 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, 
   BarChart, Bar, Legend
 } from 'recharts';
-import { Car, DollarSign, Users, TrendingUp, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { Car, IndianRupee, Users, TrendingUp, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 
 const Dashboard = () => {
   const stats = [
-    { title: 'Total Revenue', value: '$1,245,000', trend: '+12.5%', isUp: true, icon: <DollarSign size={24} /> },
+    { title: 'Total Revenue', value: '₹12,45,00,000', trend: '+12.5%', isUp: true, icon: <IndianRupee size={24} /> },
     { title: 'Cars Sold', value: '142', trend: '+8.2%', isUp: true, icon: <Car size={24} /> },
     { title: 'Available Inventory', value: '356', trend: '-2.4%', isUp: false, icon: <Car size={24} /> },
     { title: 'New Leads', value: '89', trend: '+24.1%', isUp: true, icon: <Users size={24} /> },
@@ -72,10 +72,10 @@ const Dashboard = () => {
               <LineChart data={revenueData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
                 <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#888', fontSize: 12}} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{fill: '#888', fontSize: 12}} tickFormatter={(value) => `$${value/1000}k`} dx={-10} />
+                <YAxis axisLine={false} tickLine={false} tick={{fill: '#888', fontSize: 12}} tickFormatter={(value) => `₹${(value/100000).toFixed(1)}L`} dx={-10} />
                 <RechartsTooltip 
                   contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}
-                  formatter={(value) => [`$${value.toLocaleString()}`, 'Revenue']}
+                  formatter={(value) => [`₹${value.toLocaleString('en-IN')}`, 'Revenue']}
                 />
                 <Line type="monotone" dataKey="revenue" stroke="#e22020" strokeWidth={3} dot={{r: 4, strokeWidth: 2}} activeDot={{r: 6}} />
               </LineChart>
@@ -122,10 +122,10 @@ const Dashboard = () => {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {[
-                { id: '#TRX-8234', name: 'Alex Johnson', car: '2023 Tesla Model 3', amount: '$42,500', status: 'Completed' },
-                { id: '#TRX-8235', name: 'Sarah Williams', car: '2021 BMW X5', amount: '$55,000', status: 'Processing' },
-                { id: '#TRX-8236', name: 'Mike Brown', car: '2022 Porsche 911', amount: '$120,000', status: 'Completed' },
-                { id: '#TRX-8237', name: 'Emily Davis', car: '2024 Toyota Sequoia', amount: '$78,000', status: 'Pending' },
+                { id: '#TRX-8234', name: 'Alex Johnson', car: '2023 Tata Harrier', amount: '₹25,00,000', status: 'Completed' },
+                { id: '#TRX-8235', name: 'Sarah Williams', car: '2022 Mahindra XUV700', amount: '₹28,00,000', status: 'Processing' },
+                { id: '#TRX-8236', name: 'Mike Brown', car: '2021 Hyundai Creta', amount: '₹18,00,000', status: 'Completed' },
+                { id: '#TRX-8237', name: 'Emily Davis', car: '2022 Kia Seltos', amount: '₹19,50,000', status: 'Pending' },
               ].map((row, i) => (
                 <tr key={i} className="hover:bg-gray-50/50 transition-colors">
                   <td className="px-6 py-4 font-medium text-gray-900">{row.id}</td>

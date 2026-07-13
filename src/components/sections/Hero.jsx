@@ -46,11 +46,11 @@ const Hero = () => {
   };
 
   const prices = [
-    { label: 'Under $20,000', value: '20000' },
-    { label: 'Under $40,000', value: '40000' },
-    { label: 'Under $60,000', value: '60000' },
-    { label: 'Under $100,000', value: '100000' },
-    { label: 'Under $150,000', value: '150000' }
+    { label: 'Under ₹15 Lakhs', value: '1500000' },
+    { label: 'Under ₹20 Lakhs', value: '2000000' },
+    { label: 'Under ₹25 Lakhs', value: '2500000' },
+    { label: 'Under ₹30 Lakhs', value: '3000000' },
+    { label: 'Under ₹45 Lakhs', value: '4500000' }
   ];
 
   const years = ['2019', '2020', '2021', '2022', '2023', '2024'];
@@ -175,15 +175,15 @@ const Hero = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white rounded-[28px] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-gray-100 p-6 md:p-8 text-primary relative z-10 text-left w-full"
+              className="bg-white/[0.08] backdrop-blur-xl rounded-[28px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/15 p-6 md:p-8 text-white relative z-10 text-left w-full"
             >
               <div className="flex items-center gap-2.5 mb-6">
-                <div className="bg-accent/10 p-2 rounded-xl text-accent">
+                <div className="bg-accent/15 p-2 rounded-xl text-accent">
                   <Sliders className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-lg text-primary tracking-tight">Quick Search</h3>
-                  <p className="text-[10px] text-gray-450 font-bold uppercase tracking-wider">Find your ideal car instantly</p>
+                  <h3 className="font-extrabold text-lg text-white tracking-tight">Quick Search</h3>
+                  <p className="text-[10px] text-white/60 font-bold uppercase tracking-wider">Find your ideal car instantly</p>
                 </div>
               </div>
 
@@ -192,37 +192,37 @@ const Hero = () => {
                 {/* Brand & Model */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1">
-                    <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Brand</label>
+                    <label className="text-[10px] font-black uppercase tracking-wider text-white/50">Brand</label>
                     <div className="relative">
                       <select
                         value={make}
                         onChange={(e) => { setMake(e.target.value); setModel(''); }}
-                        className="w-full appearance-none bg-gray-50 border border-gray-250/60 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer"
+                        className="w-full appearance-none bg-white/5 border border-white/10 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer text-white hover:bg-white/10 focus:bg-white/10 backdrop-blur-md"
                       >
-                        <option value="">All Brands</option>
+                        <option value="" className="bg-[#0f172a] text-white">All Brands</option>
                         {makes.map((m) => (
-                          <option key={m} value={m}>{m}</option>
+                          <option key={m} value={m} className="bg-[#0f172a] text-white">{m}</option>
                         ))}
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50 pointer-events-none" />
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Model</label>
+                    <label className="text-[10px] font-black uppercase tracking-wider text-white/50">Model</label>
                     <div className="relative">
                       <select
                         value={model}
                         onChange={(e) => setModel(e.target.value)}
                         disabled={!make}
-                        className="w-full appearance-none bg-gray-50 border border-gray-255/60 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                        className="w-full appearance-none bg-white/5 border border-white/10 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer text-white hover:bg-white/10 focus:bg-white/10 backdrop-blur-md disabled:opacity-45 disabled:cursor-not-allowed"
                       >
-                        <option value="">All Models</option>
+                        <option value="" className="bg-[#0f172a] text-white">All Models</option>
                         {make && modelsByMake[make]?.map((m) => (
-                          <option key={m} value={m}>{m}</option>
+                          <option key={m} value={m} className="bg-[#0f172a] text-white">{m}</option>
                         ))}
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50 pointer-events-none" />
                     </div>
                   </div>
                 </div>
@@ -230,36 +230,36 @@ const Hero = () => {
                 {/* Price & Year */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1">
-                    <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Max Price</label>
+                    <label className="text-[10px] font-black uppercase tracking-wider text-white/50">Max Price</label>
                     <div className="relative">
                       <select
                         value={priceMax}
                         onChange={(e) => setPriceMax(e.target.value)}
-                        className="w-full appearance-none bg-gray-50 border border-gray-255/60 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer"
+                        className="w-full appearance-none bg-white/5 border border-white/10 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer text-white hover:bg-white/10 focus:bg-white/10 backdrop-blur-md"
                       >
-                        <option value="">Any Price</option>
+                        <option value="" className="bg-[#0f172a] text-white">Any Price</option>
                         {prices.map((p) => (
-                          <option key={p.value} value={p.value}>{p.label}</option>
+                          <option key={p.value} value={p.value} className="bg-[#0f172a] text-white">{p.label}</option>
                         ))}
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50 pointer-events-none" />
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Min Year</label>
+                    <label className="text-[10px] font-black uppercase tracking-wider text-white/50">Min Year</label>
                     <div className="relative">
                       <select
                         value={yearMin}
                         onChange={(e) => setYearMin(e.target.value)}
-                        className="w-full appearance-none bg-gray-50 border border-gray-255/60 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer"
+                        className="w-full appearance-none bg-white/5 border border-white/10 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer text-white hover:bg-white/10 focus:bg-white/10 backdrop-blur-md"
                       >
-                        <option value="">Any Year</option>
+                        <option value="" className="bg-[#0f172a] text-white">Any Year</option>
                         {years.map((y) => (
-                          <option key={y} value={y}>{y}+</option>
+                          <option key={y} value={y} className="bg-[#0f172a] text-white">{y}+</option>
                         ))}
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50 pointer-events-none" />
                     </div>
                   </div>
                 </div>
@@ -267,55 +267,55 @@ const Hero = () => {
                 {/* Fuel & Transmission */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1">
-                    <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Fuel Type</label>
+                    <label className="text-[10px] font-black uppercase tracking-wider text-white/50">Fuel Type</label>
                     <div className="relative">
                       <select
                         value={fuelType}
                         onChange={(e) => setFuelType(e.target.value)}
-                        className="w-full appearance-none bg-gray-50 border border-gray-255/60 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer"
+                        className="w-full appearance-none bg-white/5 border border-white/10 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer text-white hover:bg-white/10 focus:bg-white/10 backdrop-blur-md"
                       >
-                        <option value="">Any Fuel</option>
+                        <option value="" className="bg-[#0f172a] text-white">Any Fuel</option>
                         {fuels.map((f) => (
-                          <option key={f} value={f}>{f}</option>
+                          <option key={f} value={f} className="bg-[#0f172a] text-white">{f}</option>
                         ))}
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50 pointer-events-none" />
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Transmission</label>
+                    <label className="text-[10px] font-black uppercase tracking-wider text-white/50">Transmission</label>
                     <div className="relative">
                       <select
                         value={transmission}
                         onChange={(e) => setTransmission(e.target.value)}
-                        className="w-full appearance-none bg-gray-50 border border-gray-255/60 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer"
+                        className="w-full appearance-none bg-white/5 border border-white/10 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer text-white hover:bg-white/10 focus:bg-white/10 backdrop-blur-md"
                       >
-                        <option value="">Any Gearbox</option>
+                        <option value="" className="bg-[#0f172a] text-white">Any Gearbox</option>
                         {transmissions.map((t) => (
-                          <option key={t} value={t}>{t}</option>
+                          <option key={t} value={t} className="bg-[#0f172a] text-white">{t}</option>
                         ))}
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50 pointer-events-none" />
                     </div>
                   </div>
                 </div>
 
                 {/* Body Type */}
                 <div className="flex flex-col gap-1">
-                  <label className="text-[10px] font-black uppercase tracking-wider text-gray-400">Body Type</label>
+                  <label className="text-[10px] font-black uppercase tracking-wider text-white/50">Body Type</label>
                   <div className="relative">
                     <select
                       value={bodyType}
                       onChange={(e) => setBodyType(e.target.value)}
-                      className="w-full appearance-none bg-gray-50 border border-gray-255/60 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer"
+                      className="w-full appearance-none bg-white/5 border border-white/10 text-xs font-bold py-2.5 pl-3 pr-8 rounded-xl outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all cursor-pointer text-white hover:bg-white/10 focus:bg-white/10 backdrop-blur-md"
                     >
-                      <option value="">Any Body Type</option>
+                      <option value="" className="bg-[#0f172a] text-white">Any Body Type</option>
                       {bodyTypes.map((bt) => (
-                        <option key={bt} value={bt}>{bt}</option>
+                        <option key={bt} value={bt} className="bg-[#0f172a] text-white">{bt}</option>
                       ))}
                     </select>
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" />
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-white/50 pointer-events-none" />
                   </div>
                 </div>
 

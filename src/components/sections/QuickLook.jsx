@@ -12,8 +12,8 @@ const QuickLook = () => {
     {
       id: 1,
       name: 'TOYOTA GLANZA',
-      oldPrice: '$40,152',
-      newPrice: '$26,598',
+      oldPrice: '₹10,50,000',
+      newPrice: '₹8,25,000',
       year: '2024',
       transmission: 'Automatic',
       power: '90 hp',
@@ -22,8 +22,8 @@ const QuickLook = () => {
     {
       id: 2,
       name: 'TATA PUNCH EV',
-      oldPrice: '$40,152',
-      newPrice: '$26,598',
+      oldPrice: '₹14,90,000',
+      newPrice: '₹12,49,000',
       year: '2024',
       transmission: 'Automatic',
       power: '120 hp',
@@ -32,8 +32,8 @@ const QuickLook = () => {
     {
       id: 3,
       name: 'TATA PUNCH EV (Variant)',
-      oldPrice: '$40,152',
-      newPrice: '$26,598',
+      oldPrice: '₹16,50,000',
+      newPrice: '₹13,99,000',
       year: '2024',
       transmission: 'Automatic',
       power: '120 hp',
@@ -42,8 +42,8 @@ const QuickLook = () => {
     {
       id: 4,
       name: 'TOYOTA HYRYDER',
-      oldPrice: '$40,152',
-      newPrice: '$26,598',
+      oldPrice: '₹21,80,000',
+      newPrice: '₹17,49,000',
       year: '2024',
       transmission: 'Manual',
       power: '101 hp',
